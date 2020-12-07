@@ -1,11 +1,10 @@
-import Contracts.ContractEthernet;
-import Contracts.ContractMobile;
-import Contracts.ContractTV;
-import Contracts.Human;
+import Contracts.*;
 import Helpers.Gender;
 import Repository.Repository;
+import Sort.*;
 
 import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.Random;
 
 public class Main {
@@ -65,5 +64,15 @@ public class Main {
                 contracts.PrintArray(i);
             }
         }
+        System.out.println("\n");
+        contracts.PrintContracts(contracts.findElements(x -> x.getHuman().getGender() == Gender.Female));
+        BubbleSorter bsort = new BubbleSorter();
+        System.out.println("\n");
+        System.out.println("BubbleSorter: \n");
+        contracts.PrintContracts(bsort.sort(contracts.getAll(), Comparator.comparingInt((Contract c) -> c.getStartDate().getYear())));
+        QuickSorter qsort = new QuickSorter();
+        System.out.println("\n");
+        System.out.println("QuickSorter: \n");
+        contracts.PrintContracts(qsort.sort(contracts.getAll(), Comparator.comparingInt((Contract c) -> c.getStartDate().getYear())));
     }
 }
