@@ -54,15 +54,17 @@ public class Main {
                     contracts.add(new ContractTV(i + 1, LocalDate.of(yc = 2020 - r.nextInt(20), mc = m = r.nextInt(12) + 1, dc = d = r.nextInt(28) + 1), LocalDate.of(yc += r.nextInt(20), mc = m = r.nextInt(12) + 1, dc = d = r.nextInt(28) + 1), i + 1, human, aChannel, packageChannels));
                 }
             }
-            contracts.PrintArray(i);
+            contracts.PrintArrayByID(i+1);
         }
         if (amount > 0) {
-            contracts.remove(amount / 2);
+            int deleteThisId=(amount+1)/2;
+            contracts.remove(deleteThisId);
             amount--;
             System.out.println("\n");
             System.out.println(amount + " contracts are registered in the system!");
             for (int i = 0; i < amount; i++) {
-                contracts.PrintArray(i);
+                if (i!=(deleteThisId-1)){
+                contracts.PrintArrayByID(contracts.get(i+1).getID());}
             }
         }
     }
