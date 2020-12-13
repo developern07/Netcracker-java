@@ -24,12 +24,18 @@ public class ContractTV extends Contract implements IContract {
         this.aChannel = aChannel;
     }
 
+    /**
+     * Amount of channels
+     */
     protected int aChannel;
 
+    /**
+     * Names of channels
+     */
     protected String[] packageChannel;
 
     /**
-     * Method of getting amount of channels
+     * Method of getting Names of channels
      * @return packageChannel
      */
     public String[] getPackageChannel() {
@@ -37,7 +43,7 @@ public class ContractTV extends Contract implements IContract {
     }
 
     /**
-     * Method of setting amount of channels
+     * Method of setting Names of channels
      * @param packageChannel
      */
     public void setPackageChannel(String[] packageChannel) {

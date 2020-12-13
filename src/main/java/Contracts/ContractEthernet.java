@@ -24,6 +24,9 @@ public class ContractEthernet extends Contract implements IContract {
         this.speedConnection = speedConnection;
     }
 
+    /**
+     * Speed connection
+     */
     protected int speedConnection;
 
     /**

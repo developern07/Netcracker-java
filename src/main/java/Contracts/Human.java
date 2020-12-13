@@ -25,6 +25,9 @@ public class Human {
         this.idOfHuman = idOfHuman;
     }
 
+    /**
+     * ID of human
+     */
     protected int idOfHuman;
 
     /**
@@ -43,6 +46,9 @@ public class Human {
         this.name = name;
     }
 
+    /**
+     * human name
+     */
     protected String name;
 
     /**
@@ -61,6 +67,9 @@ public class Human {
         this.dateOfBirthday = dateOfBirthday;
     }
 
+    /**
+     * date of birthday
+     */
     protected LocalDate dateOfBirthday;
 
     /**
@@ -79,6 +88,9 @@ public class Human {
         this.gender = gender;
     }
 
+    /**
+     * human gender
+     */
     protected Gender gender;
 
     /**
@@ -97,6 +109,9 @@ public class Human {
         this.snPassport = snPassport;
     }
 
+    /**
+     * series and number of passport
+     */
     protected String snPassport;
 
     /**

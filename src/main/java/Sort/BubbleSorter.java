@@ -4,12 +4,30 @@ import Contracts.Contract;
 
 import java.util.Comparator;
 
+/**
+ * Bubble sorter model
+ */
 public class BubbleSorter implements ISorter{
+    /**
+     * Method of swap elements
+     * @param element
+     * @param i
+     * @param j
+     * @param <T>
+     */
     protected <T extends Contract> void swap(T[] element, int i, int j){
         T tmp = element[i];
         element[i]=element[j];
         element[j]=tmp;
     }
+
+    /**
+     * Method of sort elements
+     * @param elements
+     * @param cmp
+     * @param <T>
+     * @return
+     */
     public <T extends Contract> T[] sort(T[] elements, Comparator<T> cmp) {
         for (int i = 0; i < elements.length - 1; ++i) {
             for (int j = elements.length - 1; j > i; --j) {
