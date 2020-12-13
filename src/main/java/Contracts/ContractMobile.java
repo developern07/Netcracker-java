@@ -88,5 +88,4 @@ public class ContractMobile extends Contract implements IContract {
         setaMinutes(aMinutes);
         setGbTraffic(gbTraffic);
     }
-
 }
