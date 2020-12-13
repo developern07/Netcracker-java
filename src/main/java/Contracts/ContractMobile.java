@@ -24,6 +24,9 @@ public class ContractMobile extends Contract implements IContract {
         this.aSms = aSms;
     }
 
+    /**
+     * Amount of sms
+     */
     protected int aSms;
 
     /**
@@ -42,6 +45,9 @@ public class ContractMobile extends Contract implements IContract {
         this.aMinutes = aMinutes;
     }
 
+    /**
+     * Amount of minutes
+     */
     protected int aMinutes;
 
     /**
@@ -60,6 +66,9 @@ public class ContractMobile extends Contract implements IContract {
         this.gbTraffic = gbTraffic;
     }
 
+    /**
+     * Amount of gb traffic
+     */
     protected int gbTraffic;
 
     /**

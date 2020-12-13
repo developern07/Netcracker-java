@@ -101,7 +101,7 @@ public class task1 {
             if (amount > 0) {
                     int deleteThisId=(amount+1)/2;
                     contracts.remove(deleteThisId);
-                    System.out.println("\n" + deleteThisId + " contract deleted from system!");
+                    System.out.println("\n ID: " + deleteThisId + " contract deleted from system!");
                     amount--;
                     System.out.println("\n");
                     System.out.println(amount + " contracts are registered in the system!");

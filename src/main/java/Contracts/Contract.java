@@ -3,13 +3,13 @@ package Contracts;
 import java.time.LocalDate;
 
 /**
- * Contracts.Contract model
+ * Contract model
  */
 
 public class Contract implements IContract {
 
     /**
-     * Method of getting Contracts.Contract ID
+     * Method of getting Contract ID
      * @return ID
      */
     public int getID() {
@@ -17,17 +17,20 @@ public class Contract implements IContract {
     }
 
     /**
-     * Method of setting Contracts.Contract ID
+     * Method of setting Contract ID
      * @param ID
      */
     public void setID(int ID) {
         this.ID = ID;
     }
 
+    /**
+     * Contract ID
+     */
     protected int ID;
 
     /**
-     * Method of getting Contracts.Human
+     * Method of getting Human
      * @return human
      */
     public Human getHuman() {
@@ -35,17 +38,20 @@ public class Contract implements IContract {
     }
 
     /**
-     * Method of setting Contracts.Human
+     * Method of setting Human
      * @param human
      */
     public void setHuman(Human human) {
         this.human = human;
     }
 
+    /**
+     * Contract owner
+     */
     protected Human human;
 
     /**
-     * Method of getting Date of start Contracts.Contract
+     * Method of getting Date of start Contract
      * @return startDate
      */
     public LocalDate getStartDate() {
@@ -53,17 +59,20 @@ public class Contract implements IContract {
     }
 
     /**
-     * Method of setting Date of start Contracts.Contract
+     * Method of setting Date of start Contract
      * @param startDate
      */
     public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 
+    /**
+     * Date of start contract
+     */
     protected LocalDate startDate;
 
     /**
-     * Method of getting Date of end Contracts.Contract
+     * Method of getting Date of end Contract
      * @return endDate
      */
     public LocalDate getEndDate() {
@@ -71,13 +80,16 @@ public class Contract implements IContract {
     }
 
     /**
-     * Method of setting Date of end Contracts.Contract
+     * Method of setting Date of end Contract
      * @param endDate
      */
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 
+    /**
+     * Date of end contract
+     */
     protected LocalDate endDate;
 
     /**
@@ -96,6 +108,9 @@ public class Contract implements IContract {
         this.numberOfContract = numberOfContract;
     }
 
+    /**
+     * Number of contract
+     */
     protected int numberOfContract;
 
     /**

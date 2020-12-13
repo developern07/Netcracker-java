@@ -8,18 +8,38 @@ import Contracts.ContractTV;
 import javax.management.relation.RelationTypeNotFoundException;
 import java.util.Arrays;
 
+/**
+ * Repository model
+ */
 public class Repository {
+    /**
+     * array of contracts
+     */
     protected Contract[] array;
 
+    /**
+     * Constructor repository
+     */
     public Repository() {
         this.array = new Contract[0];
     }
 
+    /**
+     * Method of add contract in Repository
+     * @param element
+     * @param <T>
+     */
     public <T extends Contract> void add(T element) {
         this.array = Arrays.copyOf(array, array.length + 1);
         this.array[array.length - 1] = element;
     }
 
+    /**
+     * Method of getting contract from repository
+     * @param id
+     * @param <T>
+     * @return
+     */
     public <T extends Contract> T get(int id) {
         for (int i=0; i < array.length; i++){
             if (array[i].getID()==id) {
@@ -29,6 +49,10 @@ public class Repository {
         return null;
     }
 
+    /**
+     * Method of delete contract from repository
+     * @param id
+     */
     public void remove(int id) {
         if (id > 0 && id <= array.length) {
             for (int i=0; i < array.length; i++){
@@ -43,6 +67,11 @@ public class Repository {
             }
         }
     }
+
+    /**
+     * Method of print contract by id
+     * @param id
+     */
     public void PrintArrayByID(int id){
         int i=-1;
         for (int y=0; y < array.length; y++){
