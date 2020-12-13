@@ -21,17 +21,12 @@ public class Repository {
     }
 
     public <T extends Contract> T get(int id) {
-        int i=-1;
-        for (int y=0; y < array.length; y++){
-            if (array[y].getID()==id) {
-                i = y;
-                break;
+        for (int i=0; i < array.length; i++){
+            if (array[i].getID()==id) {
+                return (T) array[i];
             }
         }
-        if(i>-1){
-            return (T) array[i];
-        }
-        else return null;
+        return null;
     }
 
     public void remove(int id) {
