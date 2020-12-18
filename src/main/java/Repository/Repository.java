@@ -4,8 +4,10 @@ import Contracts.Contract;
 import Contracts.ContractEthernet;
 import Contracts.ContractMobile;
 import Contracts.ContractTV;
+import Sort.ISorter;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.function.Predicate;
 
 /**
@@ -16,6 +18,11 @@ public class Repository {
      * array of contracts
      */
     protected Contract[] array;
+
+    /**
+     * Sorter repository
+     */
+    protected ISorter sorter;
 
     /**
      * Constructor repository
@@ -118,15 +125,14 @@ public class Repository {
      * @param <T>
      * @return
      */
-    public <T extends Contract> T[] findElements(Predicate<T> filter){
-        Contract[] elements = new Contract[0];
-        int j=0;
+    public <T extends Contract> Repository findElements(Predicate<T> filter){
+        Repository rep = new Repository();
         boolean bool=false;
+        int j=0;
         for (int i=0; i < array.length; i++){
             if (this.array[i] != null && filter.test((T)array[i])){
                 bool = true;
-                elements = Arrays.copyOf(elements, j+1);
-                elements[j] = array[i];
+                rep.add(array[i]);
                 j++;
             }
         }
@@ -136,11 +142,20 @@ public class Repository {
             if (j==1){
                 System.out.println("Found " + j + " contract");
             }
-            return (T[]) elements;
+            return rep;
         }
         else {
             System.out.println("Contracts not found");
         }
-        return (T[]) elements;
+        return rep;
+    }
+
+    /**
+     * Method that sorts the repository
+     * @param cmp
+     * @param <T>
+     */
+    public <T extends Contract> void sortBy(Comparator <T> cmp){
+        sorter.sort((T[])array, cmp);
     }
 }
