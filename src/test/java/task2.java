@@ -60,7 +60,7 @@ public class task2 {
             contracts.PrintArrayByID(i + 1);
         }
         System.out.println("\n-Search contracts, where human gender is female-");
-        contracts.PrintContracts(contracts.findElements(x -> x.getHuman().getGender() == Gender.Female));
+        contracts.PrintContracts(contracts.findElements(x -> x.getHuman().getGender() == Gender.Female).getAll());
     }
 
     @Test

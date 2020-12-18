@@ -13,6 +13,7 @@ import com.opencsv.CSVReaderBuilder;
 import java.io.FileReader;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 
 public class ReaderCSVFiles
 {
@@ -51,8 +52,20 @@ public class ReaderCSVFiles
         int personId = 1;
         int numberString = 1;
         String typeOfContract;
+        Human humansArray[] = new Human[personId];
         while ((nextLine = reader.readNext()) != null) {
             human = new Human(personId, nextLine[2], LocalDate.parse(nextLine[4], format), Gender.valueOf(nextLine[3]), nextLine[5]);
+            for (int i=0; i<personId-2; i++){
+                if (humansArray[i] == human){
+                    human.setIdOfHuman(i+1);
+                    personId--;
+                    break;
+                }
+                else {
+                    humansArray = Arrays.copyOf(humansArray, humansArray.length + 1);
+                    humansArray[humansArray.length - 1] = human;
+                }
+            }
             typeOfContract=nextLine[6];
             String[] addInfo = nextLine[7].split(", ");
             switch (typeOfContract){
